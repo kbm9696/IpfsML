@@ -2,7 +2,7 @@ import os
 import io
 import pandas as pd
 import requests
-from ipfs_apis import IPFS
+from Ipfs_apis import ipfs_apis
 import json
 
 MetaDataSets = 'meta_data/data_sets.json'
@@ -26,7 +26,7 @@ def upload_dataset(name, file_path):
         if not os.path.exists(file_path):
             print(f'file_path:{file_path} doesnt exists!')
             return 1
-        i = IPFS()
+        i = ipfs_apis.IPFS()
         key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDE0RkY4NTU4MzVGMDYwZDBCRTk0ZWQyOTBjNTdiODE1YTE5MjQxNUQiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY1NzU2OTU4ODQxOSwibmFtZSI6Ik1BTklESUxMUyJ9.idaK-qJVyOb8WKP1cD0yddE8UJX4zRpBKtX-QqN49fU'
         upload_file_nft = i.upload_nft_storage(key, file_path)
         cid = upload_file_nft['value']['cid']
@@ -75,7 +75,8 @@ def upload_model(name, file_path):
     try:
         if not os.path.exists(file_path):
             print(f'file_path:{file_path} doesnt exists!')
-        i = IPFS()
+            return 1
+        i = ipfs_apis.IPFS()
         key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDE0RkY4NTU4MzVGMDYwZDBCRTk0ZWQyOTBjNTdiODE1YTE5MjQxNUQiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY1NzU2OTU4ODQxOSwibmFtZSI6Ik1BTklESUxMUyJ9.idaK-qJVyOb8WKP1cD0yddE8UJX4zRpBKtX-QqN49fU'
         upload_file_nft = i.upload_nft_storage(key, file_path)
         cid = upload_file_nft['value']['cid']
@@ -119,3 +120,4 @@ def get_model(name):
 
     except Exception as e:
         print(f'Got Exception while getting dataset {name} :{str(e)}')
+
