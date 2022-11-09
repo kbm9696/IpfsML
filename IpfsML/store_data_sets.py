@@ -121,3 +121,21 @@ def get_model(name):
     except Exception as e:
         print(f'Got Exception while getting dataset {name} :{str(e)}')
 
+
+def search(name):
+    try:
+        if not os.path.exists('tmp'):
+            os.mkdir('tmp')
+        if not os.path.exists(MetaDataSets):
+            print(f'File Missing {MetaDataSets}')
+            return 1
+        with open(MetaDataSets,'r') as fb:
+            # d = fb.read()
+            data = json.loads(fb.read())
+            res = next({key:value} for key, value in data.items() if key.startswith(name))
+            return res
+
+    except Exception as e:
+        return(f'Cant find while getting dataset {name} :{str(e)}')
+
+
