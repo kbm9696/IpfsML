@@ -17,4 +17,10 @@
 4. personalized encrypted data and model storage.
 
 
+# Install
 
+    ** pip install IpfsML
+
+## Setup
+    
+    
