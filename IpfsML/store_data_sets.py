@@ -2,11 +2,11 @@ import os
 import io
 import pandas as pd
 import requests
-from Ipfs_apis import ipfs_apis
+from IpfsML.Ipfs_apis import ipfs_apis
 import json
 
-MetaDataSets = 'meta_data/data_sets.json'
-MetaModels = 'meta_data/models.json'
+MetaDataSets = 'IpfsML/meta_data/data_sets.json'
+MetaModels = 'IpfsML/meta_data/models.json'
 
 
 def get_datasets():

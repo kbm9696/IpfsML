@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 requirements = ['requests']
 setup(
     name='IpfsML',
-    version='1.0.0',
+    version='1.0.4',
     packages=find_packages(exclude=['tests*']),
     license='GNU General Public License v3.0',
     description='A python wrapper for the nft-storage',
