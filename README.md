@@ -23,4 +23,34 @@
 
 ## Setup
     
+    from IpfsML import store_data_sets
+
+## Get top datasets
+    datasets = store_data_sets.get_datasets()
+
+## Search datasets
+    search_datasets = store_data_sets.search('Cryptopunks')
+
+## Upload datasets
+
+    upload_datasets = store_data_sets.upload_dataset('chick', 'chicken_nft_.csv')
+
+## Get ML Models
+
+    get_model = store_data_sets.get_model('polygon')
+
+## Upload models
+
+    store_data_sets.upload_model('ETH_model', 'eth.pth')
+
+## Get Popular Models
+
+    store_data_sets.get_models()
+
+
+
+
+
+
+
     
