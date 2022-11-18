@@ -17,6 +17,15 @@
 4. personalized encrypted data and model storage.
 
 
+## IPFS
+
+    1. **NFT.storage** and **Web3.storage** are used to store the data
+    2. Multiple cron jobs that featch data daily from various platforms
+    3. Data cleaning and data validation jobs that clean each datasets before push.
+    4. Support encryption if needs.
+
+
+
 # Install
 
     ** pip install IpfsML
